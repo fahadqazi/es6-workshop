@@ -1,4 +1,4 @@
-import log from './pretty-log'
+// import log from './pretty-log'
 
 function interpolation() {
   // refactor this to a single template literal using interpolation
@@ -6,9 +6,9 @@ function interpolation() {
   // interpolation is done with ${variable}
   const greeting = 'Hello'
   const noun = 'World'
-  return greeting.toUpperCase() + ', ' + noun + '!'
+  return `${greeting.toUpperCase()}, ${noun}!`
 }
-// log(interpolation())
+console.log(interpolation())
 
 function multiline() {
   // refactor to a single template literal with multiple lines

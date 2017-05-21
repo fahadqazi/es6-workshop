@@ -12,30 +12,33 @@ console.log(interpolation())
 
 function multiline() {
   // refactor to a single template literal with multiple lines
-  return ('\n' +
-'    this is on a new line\n' +
-'  ')
+  return (`
+    this is on a new line
+`)
 }
-// log(multiline())
+console.log(multiline())
 
 function escaping() {
   // refactor to a single template literal with multiple lines
-  return 'This is `code`\nand a new line'
+  return `'This is \`code\`'
+  
+          'and a new line'`
 }
-// log(escaping())
+console.log(escaping())
 
 function tagging() {
   const greeting = 'Hey'
   const noun = 'human'
-  return tag`I would like to say: "${greeting}, ${noun}" to you!`
+  const ender = 'Bye'
+  return tag`I would like to say: "${greeting}, ${noun}" to you! ${ender}`
 
-  function tag() {
+  function tag(stringParts, greetings, nouns, enders) {
     // what are the arguments passed to this function?
     // notice that we're returning arguments. So... We can return ANYTHING. Not just a string!
     return arguments
   }
 }
-// log(tagging())
+console.log(tagging())
 
 
 

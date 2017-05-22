@@ -3,31 +3,46 @@ function add(a, b) {
   return a + b
 }
 
-// 2. how could we make `foo` be an extra export?
-const foo = 'bar'
+export default add
 
+// 2. how could we make `foo` be an extra export?
+export const foo = 'bar'
+// export {foo}
 // 3. how could we also export `theAnswer`?
 const theAnswer = 42
 
 // 4. how could we declare and export a variable
 // at declaration time?
-// const theQuestion = ['life', 'universe', 'everything']
+export const theQuestion = ['life', 'universe', 'everything']
 
 // 5. how could we do all of these named exports
 // with a single declaration?
+var x, y, z
+
+export {x, y, z}
 
 // 6. how could we export `foo`, but make users
 // use the name `bar`?
 
+export {foo as bar}
+
 // 7. how could we give the default export an
 // alias? (like we did with the last one?)
+// export {add as default}
 
 // 8. how could we do all of the exports (including
 // the default export) with a single declaration?
+// export { add as default, 
+//         foo,
+//         theAnswer,
+//         theQuestion
+//       }
 
 // 9. how could we take all the exports from
 // './module-b' and re-export them as a part of
 // our own module?
+import iAmDefault, {ex1,ex2,ex3} from './module-b';
+
 
 // 10. how could we take only _some_ of the exports
 // from './module-b' and re-export them as a part

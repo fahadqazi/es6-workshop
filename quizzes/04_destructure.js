@@ -17,11 +17,23 @@ function getAvgTemp() {
     today: {max: 2.6, min: -6.3},
     tomorrow: {max: 3.2, min: -5.8},
   }
-  const maxToday = weather.today.max
-  const minToday = weather.today.min
+  // const maxToday = weather.today.max
+  // const minToday = weather.today.min
 
-  const maxTomorrow = weather.tomorrow.max
-  const minTomorrow = weather.tomorrow.min
+  // const maxTomorrow = weather.tomorrow.max
+  // const minTomorrow = weather.tomorrow.min
+  const {unit, 
+    today: {
+      max: maxToday,
+      min: minToday,
+    },
+    today,
+    tomorrow: {
+      max: maxTomorrow,
+      min: minTomorrow
+    }
+  }
+  console.log(today);
 
   return {
     max: (maxToday + maxTomorrow) / 2.0,
@@ -29,28 +41,30 @@ function getAvgTemp() {
     unit: weather.unit,
   }
 }
-// log(getAvgTemp())
+console.log(getAvgTemp());
 
 function getFirstTwo() {
   // refactor with array destructuring
   const arr = [0, 1, 2, 3, 4, 5, 6, 7]
-  const firstItem = arr[0]
-  const secondItem = arr[1]
+  // const firstItem = arr[0]
+  // const secondItem = arr[1]
+  const [firstItem, secondItem] = arr;
 
   return {
     firstItem: firstItem,
     secondItem: secondItem,
   }
 }
-// log(getFirstTwo())
+console.log(getFirstTwo())
 
 function getElements() {
   // returns 1st, 2nd and last element from an array
   // refactor with skipped destructuring for arrays
   const arr = [0, 1, 2, 3, 4, 5, 6, 7]
-  const first = arr[0]
-  const second = arr[1]
-  const fifth = arr[4]
+  // const first = arr[0]
+  // const second = arr[1]
+  // const fifth = arr[4]
+  const [first, second, , , fifth] = arr;
 
   return {
     first: first,
@@ -58,7 +72,7 @@ function getElements() {
     fifth: fifth,
   }
 }
-// log(getElements())
+console.log(getElements())
 
 function getSecondItem() {
   // refactor with nested destructuring of arrays
@@ -67,9 +81,11 @@ function getSecondItem() {
     ['apple', 'mango', 'orange'],
     ['cookies', 'cake', 'pizza', 'chocolate'],
   ]
-  const firstItem = food[0][1]
-  const secondItem = food[1][1]
-  const thirdItem = food[2][1]
+  // const firstItem = food[0][1]
+  // const secondItem = food[1][1]
+  // const thirdItem = food[2][1]
+
+  const [[,firstItem],[,secondItem],[,thirdItem]] = food;
 
   return {
     first: firstItem,
@@ -77,7 +93,7 @@ function getSecondItem() {
     third: thirdItem,
   }
 }
-// log(getSecondItem())
+console.log(getSecondItem())
 
 function nestedArrayAndObject() {
   // refactor this to a single line of destructuring...
@@ -93,14 +109,28 @@ function nestedArrayAndObject() {
       ],
     },
   }
-  const title = info.title
-  const protagonistName = info.protagonist.name
-  const enemy = info.protagonist.enemies[3]
-  const enemyTitle = enemy.title
-  const enemyName = enemy.name
+  // const title = info.title
+  // const protagonistName = info.protagonist.name
+  // const enemy = info.protagonist.enemies[3]
+  // const enemyTitle = enemy.title
+  // const enemyName = enemy.name
+
+const {
+    title,
+    protagonist: {
+      name: protagonistName,
+      enemies: [,,,
+        {
+          title: enemyTitle,
+          name: enemyName,
+        },
+      ],
+    },
+  } = info
+
   return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
 }
-// log(nestedArrayAndObject())
+console.log(nestedArrayAndObject())
 
 function defaultValues() {
   const bench = {type: 'Piano', adjustable: false}
@@ -111,7 +141,7 @@ function defaultValues() {
     return 4
   }
 }
-// log(defaultValues())
+console.log(defaultValues())
 
 function ontoAnObject() {
   // refactor this to destructuring

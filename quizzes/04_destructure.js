@@ -1,11 +1,13 @@
 import log from './pretty-log'
+// const log = require('pretty-log')
 
 function getAverage() {
   // refactor with object destructuring
   const obj = {x: 3.6, y: 7.8, z: 4.3}
-  return Math.floor((obj.x + obj.y + obj.z) / 3.0)
+  const {x, y, z} = obj
+  return Math.floor(x + y + z) / 3.0);
 }
-// log(getAverage())
+log(getAverage())
 
 function getAvgTemp() {
   // refactor with nested destructuring

@@ -22,6 +22,7 @@ function getNestedNumbers() {
 
 test('can be used to pull apart objects', () => {
   // Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
+  const { city, state, zip } = getAddress();
   // const address = getAddress();
   // const city = address.city;
   // const state = address.state;
@@ -33,11 +34,13 @@ test('can be used to pull apart objects', () => {
 
 test('sets missing values to undefined', () => {
   // Using destructuring, call `getAddress()` and create an 'address' variable.
+  const { address } = getAddress();
   expect(address).toBeUndefined()
 })
 
 test('can alias destructured variables', () => {
   // Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
+  const { city:c , state: s, zip: z } = getAddress();
   expect(c).toBe('Salt Lake City')
   expect(s).toBe('UT')
   expect(z).toBe(84115)
@@ -48,6 +51,7 @@ test('can alias destructured variables', () => {
 
 test('can destructure nested variables', () => {
   // Using destructuring, call `getAddress()` and create `lat` and `long` variables.
+  const { coords: { lat, long }} = getAddress();
   expect(lat).toBe(40.776608)
   expect(long).toBe(-111.920485)
   expect(() => noop(coords)).toThrow()
@@ -55,12 +59,14 @@ test('can destructure nested variables', () => {
 
 test('can be used to pull apart arrays', () => {
   // Call getNumbers and pull the first value out as `one` and the second as `two`
+  var [one, two] = getNumbers();
   expect(one).toBe(1)
   expect(two).toBe(2)
 })
 
 test('can skip indexes in arrays', () => {
   // Call getNumbers and pull the first value out as `one` and the third as `three`
+  const [one, ]
   expect(one).toBe(1)
   expect(three).toBe(3)
   expect(() => noop(two)).toThrow()

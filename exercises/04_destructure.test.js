@@ -66,7 +66,7 @@ test('can be used to pull apart arrays', () => {
 
 test('can skip indexes in arrays', () => {
   // Call getNumbers and pull the first value out as `one` and the third as `three`
-  const [one, ]
+  const [one, , three] =getNumbers();
   expect(one).toBe(1)
   expect(three).toBe(3)
   expect(() => noop(two)).toThrow()
@@ -74,6 +74,7 @@ test('can skip indexes in arrays', () => {
 
 test('can reach nested arrays', () => {
   // Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
+  const [one,, three,,, six] = getNumbers();
   expect(one).toBe(1)
   expect(three).toBe(3)
   expect(six).toBe(6)
@@ -86,7 +87,7 @@ test('can reach nested arrays', () => {
 http://ws.kcd.im/?ws=ES6+and+Beyond&e=Destructuring&em=fahadqazi@gmail.comYOUR_EMAIL@DOMAIN.COM
 */
 test('I submitted my elaboration and feedback', () => {
-  const submitted = false // change this when you've submitted!
+  const submitted = true // change this when you've submitted!
   expect(true).toBe(submitted)
 })
 ////////////////////////////////

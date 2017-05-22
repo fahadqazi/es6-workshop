@@ -50,7 +50,7 @@ test(`Reflect.ownKeys returns the object's own (not inherited) keys (including s
 
 //////// Elaboration & Feedback /////////
 /*
-http://ws.kcd.im/?ws=ES6+and+Beyond&e=Reflect&em=YOUR_EMAIL@DOMAIN.COM
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Reflect&em=fahadqazi@gmail.comYOUR_EMAIL@DOMAIN.COM
 */
 test('I submitted my elaboration and feedback', () => {
   const submitted = false // change this when you've submitted!

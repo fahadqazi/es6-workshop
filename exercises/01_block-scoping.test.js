@@ -59,7 +59,7 @@ test('means that we can start using block statements', () => {
 
 //////// Elaboration & Feedback /////////
 /*
-http://ws.kcd.im/?ws=ES6+and+Beyond&e=Block+Scoping&em=YOUR_EMAIL@DOMAIN.COM
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Block+Scoping&em=fahadqazi@gmail.comYOUR_EMAIL@DOMAIN.COM
 */
 test('I submitted my elaboration and feedback', () => {
   const submitted = true // change this when you've submitted!

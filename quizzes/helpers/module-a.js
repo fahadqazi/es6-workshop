@@ -41,18 +41,19 @@ export {foo as bar}
 // 9. how could we take all the exports from
 // './module-b' and re-export them as a part of
 // our own module?
-import iAmDefault, {ex1,ex2,ex3} from './module-b';
+// export * from './module-b'
 
 
 // 10. how could we take only _some_ of the exports
 // from './module-b' and re-export them as a part
 // of our own module?
+// export {ex1, ex2, ex3} from './module-b'
 
 // 11. how could we take the default export from
 // './module-b' and re-export it with a different
 // name in our own module?
 
-
+export {ex1, ex2, default as modulo} from './module-b'
 
 
 

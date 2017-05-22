@@ -1,29 +1,30 @@
-import log from './pretty-log'
+// import log from './pretty-log'
 
 function stringIncludes() {
   // refactor to String.includes
   const phrase = 'in the box'
-  return phrase.indexOf('the') !== -1
+  return phrase.includes('the')
 }
-// log(stringIncludes())
+console.log(stringIncludes())
 
 function stringRepeat() {
   // refactor to String.repeat
   const repeatCount = 20
-  let marker = ''
-  for (let i = 0; i < repeatCount; i++) {
-    marker += '*'
-  }
-  return marker
+  const marker = '*'
+  // for (let i = 0; i < repeatCount; i++) {
+  //   marker += '*'
+  // }
+  return marker.repeat(repeatCount)
 }
-// log(stringRepeat())
+console.log(stringRepeat())
 
 function arrayFrom() {
   // refactor to Array.from
   const arrayLike = {length: 2, 0: 'hello', 1: 'world'}
-  return Array.prototype.slice.apply(arrayLike)
+  return Array.from(arrayLike)
+  // return Array.prototype.slice.apply(arrayLike)
 }
-// log(arrayFrom())
+console.log(arrayFrom())
 
 function arrayFill() {
   // refactor to Array.fill
@@ -36,9 +37,9 @@ function arrayFill() {
       array[i] = value
     }
   }
-  return array
+  return array.fill(value, start, end)
 }
-// log(arrayFill())
+console.log(arrayFill())
 
 function objectAssign() {
   // what will this return?
@@ -52,7 +53,7 @@ function objectAssign() {
   Object.assign(target, object1, object2, object3)
   return target
 }
-// log(objectAssign())
+console.log(objectAssign())
 
 
 

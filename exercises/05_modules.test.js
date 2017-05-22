@@ -1,4 +1,6 @@
+import {sqrt as mySqrt, square as mySquare} from '../common/Mathy'
 import * as Mathy from '../common/Mathy'
+import _ from 'lodash'
 // WRITE YOUR IMPORT STATEMENTS HERE
 
 test('can import Mathy', () => {
@@ -10,6 +12,7 @@ test('can import Mathy', () => {
 
 test('can specify what to import, to only retain pieces of the import', () => {
   // Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
+
   expect(mySqrt).toBeDefined()
   expect(mySquare).toBeDefined()
   expect(mySqrt).toBe(Mathy.sqrt)
@@ -26,7 +29,7 @@ test('can import from my node_modules', () => {
 http://ws.kcd.im/?ws=ES6+and+Beyond&e=Modules&em=fahadqazi@gmail.comYOUR_EMAIL@DOMAIN.COM
 */
 test('I submitted my elaboration and feedback', () => {
-  const submitted = false // change this when you've submitted!
+  const submitted = true // change this when you've submitted!
   expect(true).toBe(submitted)
 })
 ////////////////////////////////
